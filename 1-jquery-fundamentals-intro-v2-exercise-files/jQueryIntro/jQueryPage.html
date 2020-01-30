@@ -1,0 +1,125 @@
+<html>
+   <head>
+      <script type="text/javascript" src="jquery.js"></script>
+      <script type="text/javascript">
+          window.onload = function() {
+             //alert('Window loaded');
+          };
+
+          $(document).ready(function() {
+             //$('#myContent').html('Hello World');
+             //$('p').html('test');    //Selecting Nodes by "Tag Name"
+             $('#TestDiv').html('TEST');//Selecting by Element "ID" -> Use # to select ID
+             //$('.myClass, .test').css('background','gray').html('There is a new changes'); //Selecting Elements by Class Name
+             //$('input[type="text"]').css('background','red'); //Selecting Node by atribute
+               //alert(div.length);
+              //$('tr').css('background-color', 'green'); //Input selector 
+              //$('div[title*="Title"]').html('Update div');
+              
+              /*
+              var divs = $('div');
+              alert(divs.length);*/
+              $('div, span, table').css('background-color','orange');
+
+            $('div.BlueDiv, div.RedDiv').each(function(index) {
+                  //raw DOM object 
+                  this.title = "Some title";
+                  $(this).attr('title','some title 2');
+            });
+            $('div.BlueDiv, div.RedDiv')
+                .attr({
+                    title: 'some title 3'
+                    //style: 'font-size:14pt; background-color: red;'
+                })
+                .css('background','green')
+                .css('font-size','30pt');      
+
+
+                /*Adding and Removing Nodes*/
+                /*4 methods
+                    .append()
+                    .appendTo()
+                    .prepend()
+                    .prependTo()
+
+                    For remove node from an elements use .remove()
+                */
+                //Modifying the DOM
+                $('')
+            
+
+         });
+      </script>
+   </head>
+   <body>
+      <div id="TestDiv" title="Div Title asdf asdfsdf asdf">
+          This is my div text
+      </div>
+      <div title="Contains Table">
+          <table id="DataTable">
+            <tr>
+               <td>Cell 1 Row 1</td>
+            </tr>
+            <tr>
+               <td>Cell 1 Row 2</td>
+            </tr>
+            <tr>
+               <td>Cell 1 Row 3</td>
+            </tr>
+            <tr>
+               <td>
+                  <table style="width:100%">
+                      <tr>
+                          <td>Nested Table Cell and Row</td>
+                      </tr>
+                  </table>
+               </td>
+            </tr>
+          </table>
+          <br />
+      </div>
+      <div class="BlueDiv">
+          <span>Blue div</span>
+      </div>
+      <br />
+      <span class="BlueDiv">This is my blue span</span>
+      <br />
+      <div class="RedDiv">
+          <span>Red div</span>
+      </div>
+      <p>
+          <img src="Images/pluralsight.png" />
+      </p>
+  
+      <form id="form1" runat="server">
+          <table style="width:300px;">
+              <tr>
+                  <td style="width:30%;">First Name</td>
+                  <td style="width:70%;"><input id="FirstNameTextBox" value="John" type="text" /></td>
+              </tr>
+              <tr>
+                  <td>Last Name</td>
+                  <td><input id="LastNameTextBox" type="text" /></td>
+              </tr>
+              <tr>
+                  <td>Comments</td>
+                  <td><textarea rows="5" cols="60" id="CommentsTextBox">TextArea</textarea></td>
+              </tr>           
+              <tr>
+                  <td>
+                  <select id="sel">
+                      <option value="AZ">AZ</option>
+                      <option value="CA" selected="true">CA</option>
+                  </select></td>
+                  <td>&nbsp;</td>
+              </tr>
+              <tr>
+                  <td><input id="SubmitButton" type="button" value="Submit" /></td>
+                  <td>&nbsp;</td>
+              </tr>
+          </table>  
+  
+      </form>
+  </body>
+  </html>
+  
